@@ -23,6 +23,7 @@
 		BF152B752BFED04C00B45810 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = BF152B742BFED04C00B45810 /* Realtime */; };
 		BF152B772BFED04C00B45810 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = BF152B762BFED04C00B45810 /* Storage */; };
 		BF2701F62BD158AD00D3C215 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2701F52BD158AD00D3C215 /* TodoListViewModel.swift */; };
+		BF392C912C07E69700996FAB /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF392C902C07E69700996FAB /* NewItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BF1367772C001502006FF408 /* AppEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntryView.swift; sourceTree = "<group>"; };
 		BF1367792C001548006FF408 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		BF2701F52BD158AD00D3C215 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
+		BF392C902C07E69700996FAB /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				814A08FB2BC41BC500921E4F /* ItemView.swift */,
 				BF1367772C001502006FF408 /* AppEntryView.swift */,
 				BF1367792C001548006FF408 /* AuthView.swift */,
+				BF392C902C07E69700996FAB /* NewItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				815D9D7F2BC413800050957E /* LandingView.swift in Sources */,
 				BF1367732BFED1C4006FF408 /* Supabase.swift in Sources */,
+				BF392C912C07E69700996FAB /* NewItemView.swift in Sources */,
 				814A08FC2BC41BC500921E4F /* ItemView.swift in Sources */,
 				814A08FE2BC41C7800921E4F /* TodoItem.swift in Sources */,
 				BF1367782C001502006FF408 /* AppEntryView.swift in Sources */,
