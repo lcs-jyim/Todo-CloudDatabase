@@ -10,6 +10,7 @@ import SwiftUI
 struct LandingView: View {
     
     // MARK: Stored properties
+
     
     // The search text
     @State var searchText = ""
@@ -25,28 +26,32 @@ struct LandingView: View {
         NavigationView {
             
             VStack {
-                
-                List($viewModel.todos) { $todo in
-                    
-                    ItemView(currentItem: $todo)
-                    // Delete item
-                        .swipeActions {
-                            Button(
-                                "Delete",
-                                role: .destructive,
-                                action: {
-                                    viewModel.delete(todo)
-                                }
-                            )
-                        }
-                    
-                }
-                .searchable(text: $searchText)
-                .onChange(of: searchText) {
-                    Task {
-                        try await viewModel.filterTodos(on: searchText)
+                if viewModel.todos.isEmpty {
+                    ContentUnavailableView(
+                        "No to-do items",
+                        systemImage: "pencil.tip.crop.circle.badge.plus",
+                        description: Text("Add a reminder to get started")
+                    )
+                } else {
+                    List($viewModel.todos) { $todo in
+                        
+                        ItemView(currentItem: $todo)
+                        // Delete item
+                            .swipeActions {
+                                Button(
+                                    "Delete",
+                                    role: .destructive,
+                                    action: {
+                                        viewModel.delete(todo)
+                                    }
+                                )
+                            }
+                        
                     }
+                    
                 }
+             
+               
                 
                 
             }
@@ -63,6 +68,12 @@ struct LandingView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
+                }
+            }
+            .searchable(text: $searchText)
+            .onChange(of: searchText) {
+                Task {
+                    try await viewModel.filterTodos(on: searchText)
                 }
             }
             
