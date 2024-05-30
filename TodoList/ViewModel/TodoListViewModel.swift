@@ -21,7 +21,7 @@ class TodoListViewModel {
     // MARK: Stored properties
     // The list of to-do items
     var todos: [TodoItem]
-    
+    var fetchingTodos: Bool = false
     // MARK: Initializer(s)
     init(todos: [TodoItem] = []) {
         self.todos = todos
@@ -33,7 +33,7 @@ class TodoListViewModel {
     
     // MARK: Functions
     func getTodos() async throws {
-        
+        fetchingTodos = true
         do {
             let results: [TodoItem] = try await supabase
                 .from("todos")
@@ -43,7 +43,7 @@ class TodoListViewModel {
                 .value
             
             self.todos = results
-            
+        fetchingTodos = false
         } catch {
             debugPrint(error)
         }
